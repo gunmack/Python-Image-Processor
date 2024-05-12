@@ -1,0 +1,2 @@
+- Python Image modifier using numpy and pygame modules
+- Final project for CMPT 120
