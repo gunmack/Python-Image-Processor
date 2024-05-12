@@ -1,2 +1,4 @@
-- Python Image modifier using numpy and pygame modules
+- Python Image processor using:
+    - numpy 
+    - pygame 
 - Final project for CMPT 120
