@@ -7,7 +7,7 @@ Made with:
 Final project for CMPT 120
 
 # To run:
-Download zip folder or files
+Download and extract zip folder 
   
 install pygame and numpy
   
