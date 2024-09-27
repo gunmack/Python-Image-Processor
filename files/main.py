@@ -11,6 +11,7 @@ import cmpt120imageProjHelper
 import cmpt120imageManip
 import tkinter.filedialog
 import pygame
+import os
 pygame.init()
 
 # list of system options
@@ -80,7 +81,9 @@ def handleUserInput(state, img):
     Returns: the 2d array of RGB vales of the result image of an operation chosen by the user
     """
 
-    directory = "E:\\sfu\\sfuFall'21\\CMPT 120\\Final Project"
+    # get current working directory
+    directory = os.getcwd()
+ 
     userInput = state["lastUserInput"].upper()
     # handle the system functionalities
     if userInput.isalpha(): # check if the input is an alphabet
