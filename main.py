@@ -14,7 +14,6 @@ import pygame
 pygame.init()
 
 # list of system options
-# ***TO-DO: populate it to provide more functionalities***[Done]
 system = [
             "Q: Quit",
             "O: Open Image",
@@ -23,7 +22,6 @@ system = [
          ]
 
 # list of basic operation options
-# ***TO-DO: populate it to provide more functionalities***[Done]
 basic = [
           "1: Apply Red Filter",
           "2: Apply Green Filter",
@@ -35,7 +33,6 @@ basic = [
          ]
 
 # list of advanced operation options
-# ***TO-DO: populate it to provide more functionalities***[Done]
 advanced = [
                 "1: Rotate Left",
                 "2: Rotate Right",
@@ -52,11 +49,11 @@ def generateMenu(state):
     Returns: a list of strings, each element represets a line in the interface
     """
     menuString = ["Welcome to CMPT 120 Image Processer!"]
-    menuString.append("") # an empty line
+    menuString.append("") 
     menuString.append("Choose the following options:")
-    menuString.append("") # an empty line
+    menuString.append("") 
     menuString += system
-    menuString.append("") # an empty line
+    menuString.append("") 
 
     # build the list differently depending on the mode attribute
     if state["mode"] == "basic":
@@ -82,17 +79,19 @@ def handleUserInput(state, img):
             img - the 2d array of RGB values to be operated on
     Returns: the 2d array of RGB vales of the result image of an operation chosen by the user
     """
+
+    directory = "E:\\sfu\\sfuFall'21\\CMPT 120\\Final Project"
     userInput = state["lastUserInput"].upper()
     # handle the system functionalities
     if userInput.isalpha(): # check if the input is an alphabet
-        if userInput == "Q": # this case actually won't happen, it's here as an example
+        if userInput == "Q": 
             print("Log: Doing system functionalities " + userInput)
             print("Log: Quitting...")
         elif userInput == "O":
             print("Log: Doing system functionalities " + userInput)
             print("Log: Opening Image...")
             tkinter.Tk().withdraw()
-            openFilename = tkinter.filedialog.askopenfilename()
+            openFilename = tkinter.filedialog.askopenfilename(initialdir=directory)
             appStateValues["lastOpenFilename"] = openFilename
             img = cmpt120imageProjHelper.getImage(openFilename)
             cmpt120imageProjHelper.showInterface(img, "New Image", generateMenu(appStateValues))
@@ -111,11 +110,9 @@ def handleUserInput(state, img):
             cmpt120imageProjHelper.showInterface(img, "Original Image", generateMenu(appStateValues))
         else:
            print("Log: Unrecognized user input: " + userInput)
-        # ***TO-DO: add the rest to handle other system functionalities***[Done]
 
     # or handle the manipulation functionalities based on which mode the application is in
     elif userInput.isdigit(): # has to be a digit for manipulation options
-        # ***TO-DO: add the rest to handle other manipulation functionalities***[Done]
         if state["mode"] == "basic":
             if userInput == "7":
                 print("Log: Performing " + basic[int(userInput)-1])
@@ -171,15 +168,9 @@ def handleUserInput(state, img):
             else: # unrecognized user input
                 print("Log: Unrecognized user input: " + userInput)
 
-                # ***TO-DO: use this format when you add the manipulation functionalities***[Done]
-                # ***instead of setting the value of state["mode"]***
-                # ***it is ok to go a bit beyond 100 characters when calling the showUserInterface***
-               
     else: # unrecognized user input
         print("Log: Unrecognized user input: " + userInput)
     return img
-
-# *** DO NOT change any of the code below this point ***
 
 # use a dictionary to remember several state values of the application
 appStateValues = {
@@ -190,11 +181,10 @@ appStateValues = {
                  }
 
 currentImg = cmpt120imageProjHelper.getBlackImage(300, 200) # create a default 300 x 200 black image
-#tkinter.Tk().withdraw()
-cmpt120imageProjHelper.showInterface(currentImg, "No Image", generateMenu(appStateValues)) # note how it is used
 
+cmpt120imageProjHelper.showInterface(currentImg, "No Image", generateMenu(appStateValues)) 
 
-# ***this is the event-loop of the application. Keep the remainder of the code unmodified***
+# ***this is the event-loop of the application. ***
 keepRunning = True
 # a while-loop getting events from pygame
 while keepRunning:
@@ -208,10 +198,9 @@ while keepRunning:
             # otherwise let the helper function handle the input
             else:
                 currentImg = handleUserInput(appStateValues, currentImg)
-        elif event.type == pygame.QUIT: #another way to quit the program is to click the close botton
+        elif event.type == pygame.QUIT: 
             keepRunning = False
-
-# shutdown everything from the pygame package
+            
 pygame.quit()
 
 print("Log: Program Quit")

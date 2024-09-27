@@ -269,10 +269,6 @@ def locateFish(img):
     # Assigns list values to variables used later to draw the box
     col_max = int(col_num[1])
     col_min = int(col_num[0])
-
-    # Was used to check if code above works properly
-    # print(col_min,col_max)
-    # print(row_max,row_min)
     
     # Two for loops
     # One draw vertical lines and the other draws horizontal lines

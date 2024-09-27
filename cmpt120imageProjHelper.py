@@ -30,6 +30,8 @@ def saveImage(pixels, filename):
     (width, height, colours) = nparray.shape
     surf = pygame.display.set_mode((width, height))
     pygame.surfarray.blit_array(surf, nparray)
+
+    # save file with extension .jpg
     pygame.image.save(surf, filename + ".jpg")
 
 
@@ -47,9 +49,6 @@ def showImage(pixels):
     nparray = numpy.asarray(pixels).transpose(1, 0, 2)
     surf = pygame.surfarray.make_surface(nparray)
     (width, height, colours) = nparray.shape
-    #surf = pygame.display.set_mode((width, height))
-    #pygame.surfarray.blit_array(surf, nparray)
-    # for pixels2
     pygame.display.init()
     pygame.display.set_caption("CMPT120 - Image")
     screen = pygame.display.set_mode((width, height))
