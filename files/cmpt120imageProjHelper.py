@@ -1,7 +1,10 @@
 # Some helper functions to wrap the Pygame image functions
 # Plus the showInterface function that displays the user interface
 # DO NOT modify this file
+
 # Supports load+save for common image formats like PNG, JPG, and BMP
+    # Only JPG, will add user choice for save format
+
 # Pre-requisite: Pygame and Numpy modules imported
 # Authors: Angelica Lim, Victor Cheung
 # Last update: 16 Nov, 2021
