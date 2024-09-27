@@ -1,13 +1,10 @@
 # Python Image processor 
 
-Made with:
-    - numpy 
+Made with: <br/>
+    - numpy <br/>
     - pygame 
 
-Final project for CMPT 120
-
 # To run:
-Download and extract zip folder 
   
 install pygame and numpy
   
