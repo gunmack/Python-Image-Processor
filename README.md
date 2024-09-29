@@ -1,9 +1,5 @@
 # Source
 1. Final project for [CMPT 120](https://www.sfu.ca/outlines.html?2021/fall/cmpt/120/d300), Fall 2021 at [SFU](https://www.sfu.ca/computing.html)
-2. Authors:
-    - Dr. Angelica Lim and Dr. Victor Cheung
-    - Last update: 16 Nov, 2021
-
 
 # Python Image processor 
 
